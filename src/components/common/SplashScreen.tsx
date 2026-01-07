@@ -45,7 +45,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             phase === 'logo'
               ? 'scale-100 rotate-180 opacity-0'
               : 'scale-100 rotate-0 opacity-100'
-          } ${phase === 'merge' ? 'h-8 w-auto sm:h-10 md:h-12 lg:h-[3.5rem]' : 'h-8 w-auto sm:h-10 md:h-12 lg:h-[3.5rem]'}`}
+          } ${phase === 'merge' ? 'h-8 w-auto sm:h-10 md:h-12 lg:h-[3em]' : 'h-8 w-auto sm:h-10 md:h-12 lg:h-[3.5em]'}`}
         >
           <img src="/logo.png" alt="AADRILA Logo" className="h-full w-full object-contain" />
         </div>
