@@ -33,9 +33,9 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
       {/* Logo and Text Container */}
       <div
-        className={`relative flex items-center gap-3 transition-all duration-1000 ease-out ${
+        className={`relative flex items-center gap-2 transition-all duration-1000 ease-out ${
           phase === 'merge'
-            ? 'scale-75 -translate-y-[45vh] -translate-x-[35vw]'
+            ? '-translate-y-[42vh] -translate-x-[32vw]'
             : 'scale-100 translate-y-0 translate-x-0'
         }`}
       >
@@ -45,9 +45,9 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             phase === 'logo'
               ? 'scale-0 rotate-180 opacity-0'
               : 'scale-100 rotate-0 opacity-100'
-          } ${phase === 'merge' ? 'w-8 h-8' : 'w-16 h-16 md:w-20 md:h-20'}`}
+          } ${phase === 'merge' ? 'h-8 w-auto sm:h-10 md:h-12 lg:h-[48px]' : 'w-16 h-16 md:w-20 md:h-20'}`}
         >
-          <img src="/logo.png" alt="AADRILA Logo" className="w-full h-full object-contain" />
+          <img src="/logo.png" alt="AADRILA Logo" className="h-full w-full object-contain" />
         </div>
 
         {/* AADRIIA Text */}
@@ -59,8 +59,8 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           }`}
         >
           <span className="flex flex-col leading-tight">
-            <span className="text-[28px] font-medium tracking-[0.15em] font-raleway text-black ">AADRILA</span>
-            <span className="text-[11px] font-semibold tracking-[0.46em] font-raleway text-black">TECHNOLOGIES</span>
+            <span className="text-lg sm:text-xl md:text-2xl lg:text-[28px] font-medium tracking-[0.15em] font-raleway text-black">AADRILA</span>
+            <span className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] font-semibold tracking-[0.46em] font-raleway text-black">TECHNOLOGIES</span>
           </span>
         </div>
       </div>

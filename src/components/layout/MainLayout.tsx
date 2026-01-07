@@ -2,10 +2,14 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
-const MainLayout = () => {
+interface MainLayoutProps {
+  navbarVisible?: boolean;
+}
+
+const MainLayout = ({ navbarVisible = true }: MainLayoutProps) => {
   return (
     <>
-      <Navbar />
+      <Navbar visible={navbarVisible} />
       <main className="min-h-screen">
         <Outlet />
       </main>

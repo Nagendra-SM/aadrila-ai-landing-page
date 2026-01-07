@@ -8,6 +8,10 @@ interface NavItem {
   type?: 'anchor' | 'route'
 }
 
+interface NavbarProps {
+  visible?: boolean
+}
+
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/', type: 'route' },
   { label: 'Industries', href: '#industries', type: 'anchor' },
@@ -19,7 +23,7 @@ const NAV_ITEMS: NavItem[] = [
 
 const ACTIVE_ITEM = 'Home'
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<NavbarProps> = ({ visible = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   // const [isScrolled, setIsScrolled] = useState(false)
   const [activeItem, setActiveItem] = useState(ACTIVE_ITEM)
@@ -80,7 +84,11 @@ const Navbar: React.FC = () => {
     <nav
       role="navigation"
       aria-label="Main navigation"
-      className={`fixed top-2 left-2 right-2 z-50 h-16 sm:h-20 md:top-3 md:left-3 md:right-3 lg:top-[11px] lg:left-[3px] lg:right-[3px] lg:h-[85px] transition-all duration-300 ease-out bg-[FFFFFFF0] backdrop-blur-[20px] rounded-xl md:rounded-2xl lg:rounded-[18px]`}
+      className={`fixed top-2 left-2 right-2 z-50 h-16 sm:h-20 md:top-3 md:left-3 md:right-3 lg:top-[11px] lg:left-[3px] lg:right-[3px] lg:h-[85px] transition-all duration-700 ease-out bg-[FFFFFFF0] backdrop-blur-[20px] rounded-xl md:rounded-2xl lg:rounded-[18px] ${
+        visible 
+          ? 'translate-y-0 opacity-100' 
+          : '-translate-y-full opacity-0'
+      }`}
     >
       <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:px-[32px]">
         <a

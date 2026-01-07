@@ -13,10 +13,13 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [contentVisible, setContentVisible] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(false);
 
   const handleSplashComplete = useCallback(() => {
     setShowSplash(false);
-    // Small delay to ensure smooth transition
+    // Trigger navbar animation immediately after splash completes
+    setNavbarVisible(true);
+    // Small delay to ensure smooth transition for content
     setTimeout(() => setContentVisible(true), 100);
   }, []);
 
@@ -33,7 +36,7 @@ function App() {
             >
               <Suspense fallback={<div>Loading...</div>}>
               <Routes>
-                <Route element={<MainLayout />}>
+                <Route element={<MainLayout navbarVisible={navbarVisible} />}>
                   <Route index element={<Home />} />
                   <Route path="about" element={<About />} />
                   <Route path="*" element={<NotFound />} />
