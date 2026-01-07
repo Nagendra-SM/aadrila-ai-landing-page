@@ -126,7 +126,7 @@ const ProductCard = ({
         <motion.button
           whileHover={buttonHover}
           whileTap={buttonTap}
-          className={`px-6 sm:px-8 py-3 rounded-full bg-hero-title text-white transition-all font-semibold text-base sm:text-lg md:text-xl leading-5 tracking-normal font-raleway w-full sm:w-auto`}
+          className={`px-6 sm:px-8 py-3 rounded-full bg-hero-title text-white transition-all font-semibold text-base sm:text-lg md:text-xl leading-5 tracking-normal font-raleway w-full sm:w-auto cursor-pointer`}
           data-testid="product-learn-more"
         >
           Learn More
@@ -134,7 +134,7 @@ const ProductCard = ({
         <motion.button
           whileHover={buttonHover}
           whileTap={buttonTap}
-          className="px-6 sm:px-8 py-3 rounded-full bg-hero-title text-white transition-all font-semibold text-base sm:text-lg md:text-xl leading-5 tracking-normal font-raleway w-full sm:w-auto"
+          className="px-6 sm:px-8 py-3 rounded-full bg-hero-title text-white transition-all font-semibold text-base sm:text-lg md:text-xl leading-5 tracking-normal font-raleway w-full sm:w-auto cursor-pointer"
           data-testid="product-schedule-demo"
         >
           Schedule a Demo

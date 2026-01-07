@@ -270,7 +270,7 @@ const Footer = () => {
                   }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full mt-4 md:mt-6 py-3 md:py-4 px-4 md:px-6 rounded-lg md:rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold font-raleway text-base md:text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl relative overflow-hidden group"
+                  className="w-full mt-4 md:mt-6 py-3 md:py-4 px-4 md:px-6 rounded-lg md:rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold font-raleway text-base md:text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl relative overflow-hidden group cursor-pointer"
                 >
                   <span className="relative z-10">Send Message</span>
                   {/* Button shine effect */}
@@ -339,7 +339,7 @@ const Footer = () => {
               </p>
               <button
                 onClick={() => setShowPopup(false)}
-                className="px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold font-raleway rounded-lg md:rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl text-sm md:text-base"
+                className="px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold font-raleway rounded-lg md:rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl text-sm md:text-base cursor-pointer"
               >
                 Close
               </button>

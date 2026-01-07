@@ -70,10 +70,10 @@ const BlogsSection = () => {
     damping: 30
   }), []);
 
-  const buttonBaseClass = "w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[hsl(205,80%,45%)] text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-opacity";
+  const buttonBaseClass = "w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[hsl(205,80%,45%)] text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-opacity cursor-pointer";
 
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-0 overflow-hidden" data-testid="blogs-section">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-2 overflow-hidden" data-testid="blogs-section">
 
       <div className="container relative z-10 px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Mobile: Show only heading */}

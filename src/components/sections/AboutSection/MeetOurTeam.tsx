@@ -108,7 +108,7 @@ const MeetOurTeam = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={handlePrevious}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-hero-title text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-hero-title text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors cursor-pointer"
             aria-label="Previous team member"
           >
             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
@@ -118,7 +118,7 @@ const MeetOurTeam = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleNext}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-hero-title text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-hero-title text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors cursor-pointer"
             aria-label="Next team member"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
