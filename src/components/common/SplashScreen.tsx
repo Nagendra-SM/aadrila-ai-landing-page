@@ -35,7 +35,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       <div
         className={`relative flex items-center gap-2 transition-all duration-1000 ease-out ${
           phase === 'merge'
-            ? '-translate-y-[42vh] -translate-x-[32vw]'
+            ? '-translate-y-[43vh] -translate-x-[38vw]'
             : 'scale-100 translate-y-0 translate-x-0'
         }`}
       >
@@ -43,9 +43,9 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         <div
           className={`transition-all duration-1000 ease-out ${
             phase === 'logo'
-              ? 'scale-0 rotate-180 opacity-0'
+              ? 'scale-100 rotate-180 opacity-0'
               : 'scale-100 rotate-0 opacity-100'
-          } ${phase === 'merge' ? 'h-8 w-auto sm:h-10 md:h-12 lg:h-[48px]' : 'w-16 h-16 md:w-20 md:h-20'}`}
+          } ${phase === 'merge' ? 'h-8 w-auto sm:h-10 md:h-12 lg:h-[3.5rem]' : 'h-8 w-auto sm:h-10 md:h-12 lg:h-[3.5rem]'}`}
         >
           <img src="/logo.png" alt="AADRILA Logo" className="h-full w-full object-contain" />
         </div>

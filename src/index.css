@@ -107,10 +107,6 @@ body {
   --document-shadow: 215 30% 20%;
 }
 
-/* .gradient-bg {
-  background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%);
-} */
-
 .text-gradient {
   background-clip: text;
   color: transparent;

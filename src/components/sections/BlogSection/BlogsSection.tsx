@@ -57,7 +57,7 @@ const BlogsSection = () => {
   }, []);
 
   const handleNext = useCallback(() => {
-    setCurrentIndex((prev) => Math.min(maxIndex, prev - 1));
+    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
   }, [maxIndex]);
 
   const carouselAnimation = useMemo(() => ({
@@ -66,8 +66,9 @@ const BlogsSection = () => {
 
   const carouselTransition = useMemo(() => ({
     type: "spring" as const,
-    stiffness: 300,
-    damping: 30
+    stiffness: 400,
+    damping: 25,
+    mass: 0.8
   }), []);
 
   const buttonBaseClass = "w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[hsl(205,80%,45%)] text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-opacity cursor-pointer";

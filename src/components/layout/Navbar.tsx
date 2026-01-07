@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ visible = true }) => {
           : '-translate-y-full opacity-0'
       }`}
     >
-      <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:px-[32px]">
+      <div className="flex h-full w-full items-center justify-between px-4 mx-auto sm:px-6 md:px-8 lg:px-20">
         <a
           href="/"
           className="flex items-center gap-2 text-current focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#96B5F1]"
