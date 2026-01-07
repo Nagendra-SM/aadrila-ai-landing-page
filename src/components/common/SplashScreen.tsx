@@ -50,7 +50,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           <img src="/logo.png" alt="AADRILA Logo" className="h-full w-full object-contain" />
         </div>
 
-        {/* AADRIIA Text */}
+        {/* AADRIIA Texts */}
         <div
           className={`overflow-hidden transition-all duration-1000 ease-out ${
             phase === 'text' || phase === 'merge'
