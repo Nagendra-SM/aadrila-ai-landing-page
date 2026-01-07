@@ -36,24 +36,22 @@ const blogs = [
 const BlogsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Use throttled resize hook
+  // Using throttled resize hook
   const { width } = useThrottledResize(150);
   
   // Memoize cards to show calculation
   const cardsToShow = useMemo(() => {
-    if (width < 640) return 1; // mobile
-    if (width < 1024) return 2; // tablet
-    return 3; // desktop
+    if (width < 640) return 1; 
+    if (width < 1024) return 2;
+    return 3;
   }, [width]);
   
   const maxIndex = useMemo(() => Math.max(0, blogs.length - cardsToShow), [cardsToShow]);
 
-  // Reset index when cardsToShow changes
   React.useEffect(() => {
     setCurrentIndex(0);
   }, [cardsToShow]);
 
-  // Memoize handlers to prevent recreation
   const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => Math.max(0, prev - 1));
   }, []);
@@ -62,7 +60,6 @@ const BlogsSection = () => {
     setCurrentIndex((prev) => Math.min(maxIndex, prev - 1));
   }, [maxIndex]);
 
-  // Memoize animation config
   const carouselAnimation = useMemo(() => ({
     x: `-${currentIndex * (100 / cardsToShow)}%`
   }), [currentIndex, cardsToShow]);
@@ -73,7 +70,6 @@ const BlogsSection = () => {
     damping: 30
   }), []);
 
-  // Memoize button styles
   const buttonBaseClass = "w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[hsl(205,80%,45%)] text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-opacity";
 
   return (
@@ -148,5 +144,4 @@ const BlogsSection = () => {
   );
 };
 
-// Memoize to prevent unnecessary re-renders
 export default memo(BlogsSection);

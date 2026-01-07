@@ -17,7 +17,6 @@ const ThemedButtonComponent: React.FC<ThemedButtonProps> = ({
   disabled = false,
   type = 'button'
 }) => {
-  // Memoize styles computation to avoid recalculation on every render
   const buttonStyles = useMemo(() => {
     const baseStyles = disabled ? 'opacity-50 cursor-not-allowed' : '';
     
@@ -44,5 +43,4 @@ const ThemedButtonComponent: React.FC<ThemedButtonProps> = ({
   );
 };
 
-// Memoize to prevent re-renders when props haven't changed
 export const ThemedButton = memo(ThemedButtonComponent);

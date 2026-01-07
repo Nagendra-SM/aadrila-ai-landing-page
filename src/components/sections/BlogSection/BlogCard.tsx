@@ -10,7 +10,6 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ title, date, excerpt, delay = 0 }: BlogCardProps) => {
-  // Memoize animation variants to prevent recreation
   const animationVariants = useMemo(() => fadeInUpVariants, []);
   const hoverAnimation = useMemo(() => hoverLift, []);
 
@@ -39,5 +38,4 @@ const BlogCard = ({ title, date, excerpt, delay = 0 }: BlogCardProps) => {
   );
 };
 
-// Memoize component to prevent unnecessary re-renders
 export default memo(BlogCard);

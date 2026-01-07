@@ -47,7 +47,7 @@ const IndustriesSection = () => {
             trigger: sectionRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true, // Only play once for performance
+            once: true,
           },
         }
       );
@@ -66,7 +66,7 @@ const IndustriesSection = () => {
             trigger: sectionRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true, // Only play once for performance
+            once: true,
           },
         }
       );

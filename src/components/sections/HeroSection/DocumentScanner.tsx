@@ -10,7 +10,6 @@ interface Document {
   type: DocumentType;
 }
 
-// Three documents that will rotate through positions
 const documents: Document[] = [
   { id: 1, type: "license" },
   { id: 2, type: "doc" },
@@ -23,9 +22,8 @@ const POSITIONS = {
   right: { x: 250, y: 30, rotate: 0, scale: 0.9, zIndex: 1, blur: 2, opacity: 0.6 },
 };
 
-// Memoize position calculation function
 const getResponsivePositions = (width: number) => {
-  if (width < 1024) { // lg breakpoint
+  if (width < 1024) {
     return {
       center: { ...POSITIONS.center, scale: 1.3 },
       left: { ...POSITIONS.left, x: -120, scale: 0.8 },
@@ -39,14 +37,11 @@ const DocumentScanner = () => {
   const [rotation, setRotation] = useState(0);
   const [isInitialized, setIsInitialized] = useState(false);
   
-  // Use throttled resize hook to prevent excessive re-renders
   const { width } = useThrottledResize(150);
   
-  // Memoize responsive positions
   const isMobile = useMemo(() => width < 1024, [width]);
   const positions = useMemo(() => getResponsivePositions(width), [width]);
 
-  // Initialize and start rotation
   useEffect(() => {
     const initTimer = setTimeout(() => {
       setIsInitialized(true);
@@ -62,16 +57,13 @@ const DocumentScanner = () => {
     };
   }, []);
 
-  // Memoize position getter function
   const getPosition = useCallback((docIndex: number) => {
     if (!isInitialized) {
-      // Initial positions
       if (docIndex === 0) return positions.center;
       if (docIndex === 1) return positions.left;
       return positions.right;
     }
 
-    // Calculate which position this document should be in
     const positionIndex = (docIndex - rotation % 3 + 3) % 3;
     
     if (positionIndex === 0) return positions.center;
@@ -79,7 +71,6 @@ const DocumentScanner = () => {
     return positions.right;
   }, [isInitialized, rotation, positions]);
 
-  // Memoize glow animation config
   const glowAnimation = useMemo(() => ({
     scale: [1, 1.15, 1],
     opacity: [0.15, 0.25, 0.15],
@@ -96,7 +87,6 @@ const DocumentScanner = () => {
       className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center"
       data-testid="document-scanner"
     >
-      {/* Decorative glow - only on desktop */}
       {!isMobile && (
         <motion.div
           className="absolute w-64 sm:w-72 md:w-80 h-64 sm:h-72 md:h-80 rounded-full opacity-30"
@@ -156,5 +146,4 @@ const DocumentScanner = () => {
   );
 };
 
-// Memoize entire component to prevent parent re-renders
 export default memo(DocumentScanner);

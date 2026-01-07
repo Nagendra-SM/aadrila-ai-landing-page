@@ -23,7 +23,6 @@ const DocumentCard = ({ type, isScanning, delay = 0 }: DocumentCardProps) => {
   const isMobile = useThrottledIsMobile(1024);
   const isTablet = useThrottledIsMobile(768);
 
-  // Memoize animation configs
   const cardAnimation = useMemo(() => 
     isScanning 
       ? { scale: [1, 1.02, 1] } 
@@ -85,7 +84,6 @@ const DocumentCard = ({ type, isScanning, delay = 0 }: DocumentCardProps) => {
           loading="lazy"
         />
         
-        {/* Scanning line overlay - only show on desktop for better mobile performance */}
         {isScanning && !isMobile && (
           <motion.div
             className="absolute left-0 right-0 h-1 sm:h-1.5 bg-linear-to-r from-transparent via-scan to-transparent"
@@ -100,7 +98,6 @@ const DocumentCard = ({ type, isScanning, delay = 0 }: DocumentCardProps) => {
         
       </motion.div>
       
-      {/* Card shadow - only show on desktop for better mobile performance */}
       {!isTablet && (
         <motion.div 
           className="absolute -bottom-4 left-8 right-8 h-4 sm:h-6 md:h-8 rounded-full blur-xl"
@@ -113,5 +110,4 @@ const DocumentCard = ({ type, isScanning, delay = 0 }: DocumentCardProps) => {
   );
 };
 
-// Memoize to prevent unnecessary re-renders
 export default memo(DocumentCard);

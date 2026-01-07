@@ -9,7 +9,7 @@ interface SectionHeadingProps {
   heading: string;
   centered?: boolean;
   headingFirst?: boolean;
-  className?: string
+  className?: string;
 }
 
 const SectionHeading = ({ tagline, heading, centered = false, headingFirst = false, className = "" }: SectionHeadingProps) => {

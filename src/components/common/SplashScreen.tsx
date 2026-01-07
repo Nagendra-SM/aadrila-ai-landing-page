@@ -10,16 +10,12 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   useEffect(() => {
     const timers: (number | NodeJS.Timeout)[] = [];
 
-    // Phase 1: Logo appears (0 - 1200ms)
     timers.push(setTimeout(() => setPhase('slide'), 1200));
 
-    // Phase 2: Slide animation (1200 - 2400ms)
     timers.push(setTimeout(() => setPhase('text'), 2400));
 
-    // Phase 3: AADRIIA text appears (2400 - 3600ms)
     timers.push(setTimeout(() => setPhase('merge'), 3600));
 
-    // Phase 4: Merge to navbar and reveal page (3600 - 4800ms)
     timers.push(setTimeout(() => {
       setPhase('done');
       onComplete();

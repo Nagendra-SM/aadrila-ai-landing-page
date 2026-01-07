@@ -43,12 +43,9 @@ const Navbar: React.FC = () => {
     setActiveItem(item.label)
     setIsMenuOpen(false)
 
-    // Navigate to home page first if not already there
     if (location.pathname !== '/') {
-      // Use navigate for SPA navigation
       window.location.assign(`/${item.href}`)
     } else {
-      // Smooth scroll to section on home page
       const targetId = item.href.replace('#', '')
       const element = document.getElementById(targetId)
       if (element) {

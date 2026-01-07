@@ -64,7 +64,6 @@ const Footer = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Save to local storage
     const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
     const newSubmission = {
       ...formData,
@@ -74,10 +73,8 @@ const Footer = () => {
     submissions.push(newSubmission);
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
     
-    // Show success popup
     setShowPopup(true);
     
-    // Reset form
     setFormData({
       fullName: "",
       email: "",
@@ -87,7 +84,6 @@ const Footer = () => {
       message: "",
     });
     
-    // Hide popup after 3 seconds
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
